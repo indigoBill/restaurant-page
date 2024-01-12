@@ -1,0 +1,82 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.header-section {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./assets/yves-alarie-BXk-N2fPLYo-unsplash.jpg);
+    background-size: cover;
+    background-position: 0% 35%;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: grid;
+    place-items: center;
+}
+
+.header-text-container {
+    border: 6px solid white;
+    width: fit-content;
+    padding: 20px;
+    color: white;
+    font-family: "Times New Roman", sans-serif, monospace;
+}
+
+.header-title,
+.header-subtext {
+    text-align: center;
+}
+
+.header-title {
+    font-size: 6rem;
+}
+
+.header-subtext {
+    font-size: 2rem;
+}
+
+.tab-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    font-weight: bold;
+    height: 50px;
+}
+
+.tab {
+    font-size: 1.2rem;
+    padding-bottom: 5px;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    color: rgb(66, 66, 66);
+}
+
+.current-tab {
+    border-bottom: 3px solid rgb(67, 87, 61);
+    color: rgb(67, 87, 61);
+}
+
+.tab:hover {
+    cursor: pointer;
+}
+
+.tab:hover:not(.current-tab) {
+    font-size: 1.3rem;
+}
+
+.tab-section,
+.main-section {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    background-color: black;
+}
