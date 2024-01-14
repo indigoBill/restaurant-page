@@ -80,3 +80,9 @@ html {
     height: 400px;
     background-color: black;
 }
+
+.home-content,
+.menu-content,
+.contact-content {
+    color: pink;
+}
