@@ -1,14 +1,13 @@
-import { changeCurrentTab } from './load.js'
+import { createContentContainer } from './general-layout.js';
 export { createContactPageContent };
 
 function createContactPageContent(){
-    const mainSection = document.querySelector('.main-section');
-    const contactContent = document.createElement('div');
+    createContentContainer('contact');
 
-    changeCurrentTab('contact');
+    const contentContainer = document.querySelector('.contact-content');
 
-    contactContent.textContent = 'CONTACT PAGE TEXT';
-
-
-    mainSection.replaceChildren(contactContent);
+    contentContainer.textContent = 'CONTACT PAGE';
 }
+
+
+

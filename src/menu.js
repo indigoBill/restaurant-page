@@ -1,13 +1,30 @@
-import { changeCurrentTab } from './load.js'
+import { createContentContainer } from './general-layout.js';
 export { createMenuPageContent };
 
 function createMenuPageContent(){
-    const mainSection = document.querySelector('.main-section');
-    const menuContent = document.createElement('div');
+    createContentContainer('menu');
 
-    changeCurrentTab('menu');
+    const contentContainer = document.querySelector('.menu-content');
 
-    menuContent.textContent = 'MENU PAGE TEXT';
+    contentContainer.textContent = 'MENU PAGE';
 
-    mainSection.replaceChildren(menuContent);
+}
+
+//CREATE BORDER SQUARE AND IMAGE SQUARE DESIGN BY HAVING THE SQUARES OVERLAP WITH THE IMAGE OF THE FOOD
+//IN THE ON TOP OF THE BORDER DIV WHICH IS USED AS A BORDER BOX SHADOW
+function createFoodSquare(){
+    const contentContainer = document.querySelector('.menu-content');
+
+    const borderDiv = document.createElement('div');
+    borderDiv.classList.add('border-square');
+
+    const imageDiv = document.createElement('div');
+    imageDiv.classList.add('solid-square');
+
+    const divContainer = document.createElement('div');
+
+    divContainer.appendChild(borderDiv);
+    divContainer.appendChild(imageDiv);
+
+    contentContainer.appendChild(divContainer);
 }

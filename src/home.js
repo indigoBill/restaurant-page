@@ -1,12 +1,11 @@
-import { changeCurrentTab } from './load.js'
+import { createContentContainer } from './general-layout.js';
 export { createHomePageContent };
 
 function createHomePageContent(){
-    const mainSection = document.querySelector('.main-section');
-    const homeContent = document.createElement('div');
+    createContentContainer('home');
 
-    changeCurrentTab('home');
+    const contentContainer = document.querySelector('.home-content');
 
-    homeContent.textContent = 'HOME PAGE TEXT';
-    mainSection.replaceChildren(homeContent);
+    contentContainer.textContent = 'HOME PAGE';
+
 }
