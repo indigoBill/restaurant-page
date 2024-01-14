@@ -1,9 +1,9 @@
-import { createLoadPage } from './load.js'
+import { createGeneralLayout } from './general-layout.js'
 import { createHomePageContent } from './home.js';
 import { createMenuPageContent } from './menu.js';
 import { createContactPageContent } from './contact.js';
 
-createLoadPage();
+createGeneralLayout();
 
 function changeMainContent(){
     const tabs = document.querySelectorAll('.tab');
