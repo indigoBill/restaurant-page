@@ -1,19 +1,7 @@
 import { createHomePageContent } from './home.js';
-export { createLoadPage, changeCurrentTab };
+export { createGeneralLayout, changeCurrentTab, createContentContainer };
 
-function changeCurrentTab(currentTab){
-    const tabs = document.querySelectorAll('.tab');
-
-    tabs.forEach((tab) => {
-        if(tab.textContent === currentTab.toUpperCase()){
-            tab.classList.add('current-tab');
-        }else{
-            tab.classList.remove('current-tab');
-        }
-    });
-}
-
-function createLoadPage(){
+function createGeneralLayout(){
     const page = document.querySelector('#content');
 
     function createHeader(){
@@ -65,10 +53,33 @@ function createLoadPage(){
         mainSection.classList.add('main-section');
         page.appendChild(mainSection);
     }
-    
 
     createHeader();
     createPageTabs();
     createMainSection();
     createHomePageContent();
 }
+
+function changeCurrentTab(currentTab){
+    const tabs = document.querySelectorAll('.tab');
+
+    tabs.forEach((tab) => {
+        if(tab.textContent === currentTab.toUpperCase()){
+            tab.classList.add('current-tab');
+        }else{
+            tab.classList.remove('current-tab');
+        }
+    });
+}
+
+function createContentContainer(pageType){
+    const mainSection = document.querySelector('.main-section');
+
+    const content = document.createElement('div');
+    content.classList.add(`${pageType}-content`);
+
+    changeCurrentTab(pageType);
+
+    mainSection.replaceChildren(content);
+}
+
