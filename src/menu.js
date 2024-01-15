@@ -4,27 +4,73 @@ export { createMenuPageContent };
 function createMenuPageContent(){
     createContentContainer('menu');
 
-    const contentContainer = document.querySelector('.menu-content');
+    createMealHeader('breakfast'); 
 
-    contentContainer.textContent = 'MENU PAGE';
+    const breakfastMeal_1 = createFoodSquare();
+    breakfastMeal_1.addImage('../src/assets/gabre-cameron-W4vDQETfroY-unsplash.jpg');
+    breakfastMeal_1.addText('Ackee & Saltfish W/ Fried Dumpling', true);
+    breakfastMeal_1.addText('DESCRIPTION');
+    breakfastMeal_1.addText('$10',false, true);
+
+    createMealHeader('lunch');
+    createMealHeader('dinner');
 
 }
 
-//CREATE BORDER SQUARE AND IMAGE SQUARE DESIGN BY HAVING THE SQUARES OVERLAP WITH THE IMAGE OF THE FOOD
-//IN THE ON TOP OF THE BORDER DIV WHICH IS USED AS A BORDER BOX SHADOW
 function createFoodSquare(){
+
     const contentContainer = document.querySelector('.menu-content');
 
     const borderDiv = document.createElement('div');
-    borderDiv.classList.add('border-square');
-
     const imageDiv = document.createElement('div');
-    imageDiv.classList.add('solid-square');
+    const imageContainer = document.createElement('div');
+    const imageAndTextContainer = document.createElement('div');
+    const textContainer = document.createElement('div');
 
-    const divContainer = document.createElement('div');
+    borderDiv.classList.add('border-square');
+    imageDiv.classList.add('image-square');
+    imageContainer.classList.add('image-container');
+    imageAndTextContainer.classList.add('image-txt-container');
+    textContainer.classList.add('text-container');
 
-    divContainer.appendChild(borderDiv);
-    divContainer.appendChild(imageDiv);
+    imageContainer.appendChild(borderDiv);
+    imageContainer.appendChild(imageDiv);
 
-    contentContainer.appendChild(divContainer);
+    imageAndTextContainer.appendChild(imageContainer);
+    imageAndTextContainer.appendChild(textContainer);
+
+    contentContainer.appendChild(imageAndTextContainer);
+
+    function addImage(imagePath){
+        imageDiv.style.backgroundImage = `url('${imagePath}')`;
+    }
+
+    function addText(text, isSubtextHeader, isPrice){
+        const textDiv = document.createElement('div');
+        textDiv.textContent = text;
+
+        if(isSubtextHeader){
+            textDiv.classList.add('subtext-header');
+        }
+
+        if(isPrice){
+            textDiv.classList.add('price');
+        }
+
+        textContainer.appendChild(textDiv);
+    }
+
+    return { addImage, addText };
 }
+
+function createMealHeader(meal){
+    const contentContainer = document.querySelector('.menu-content');
+
+    const mealHeader = document.createElement('div');
+    mealHeader.classList.add('meal-header');
+    mealHeader.textContent = meal.toUpperCase();
+
+    contentContainer.appendChild(mealHeader);
+}
+
+
