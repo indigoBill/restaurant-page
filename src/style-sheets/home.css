@@ -1,0 +1,38 @@
+.home-content {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introContainer {
+    min-height: 250px;
+    max-height: fit-content;
+    max-width: 1000px;
+    width: 100%;
+    border: 5px solid rgb(67, 87, 61);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px;
+}
+
+.intro-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(67, 87, 61);
+}
+
+.intro-header:hover {
+    transform: scale(1.1);
+}
+
+.intro-subtext {
+    font-size: 1.3rem;
+    text-align: center;
+}

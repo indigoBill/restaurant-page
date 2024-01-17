@@ -1,0 +1,151 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+.header-section {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/yves-alarie-BXk-N2fPLYo-unsplash.jpg);
+    background-size: cover;
+    background-position: 0% 35%;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: grid;
+    place-items: center;
+}
+
+.header-text-container {
+    border: 6px solid white;
+    width: fit-content;
+    padding: 20px;
+    color: white;
+}
+
+.header-title,
+.header-subtext {
+    text-align: center;
+}
+
+.header-title {
+    font-size: 6rem;
+}
+
+.header-subtext {
+    font-size: 2rem;
+}
+
+.tab-section {
+    display: flex;
+    justify-content: center;
+}
+
+.tab-container {
+    display: grid;
+    grid-template: 25px / repeat(3, min-content);
+    justify-content: center;
+    font-weight: bold;
+    align-content: center;
+    column-gap: 5rem;
+}
+
+.tab {
+    font-size: 1.2rem;
+    width: 100px;
+    text-align: center;
+}
+
+.tab-slider {
+    width: 100px;
+    height: 3px;
+    background-color: rgb(67, 87, 61);
+    margin-left: 0;
+    transition: margin-left 1s ease-in-out;
+}
+
+.tab-slider-home {
+    margin-left: 0;
+}
+
+.tab-slider-menu {
+    margin-left: 11.3rem;
+}
+
+.tab-slider-contact {
+    margin-left: 22.5rem;
+}
+
+.tabs-and-slider-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+}
+
+.tab:hover {
+    cursor: pointer;
+}
+
+.tab:hover:not(.current-tab) {
+    font-size: 1.3rem;
+}
+
+.header-text-container,
+.tab-section,
+.main-section {
+    font-family: "Times New Roman", sans-serif, monospace;
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .header-section {
+        height: 250px;
+    }
+
+    .header-title {
+        font-size: 3rem;
+    }
+
+    .header-subtext {
+        font-size: 1rem;
+    }
+
+    .tab-container {
+        column-gap: 2rem;
+    }
+
+    .tab-slider-home {
+        margin-left: 0;
+    }
+    
+    .tab-slider-menu {
+        margin-left: 8.3rem;
+    }
+    
+    .tab-slider-contact {
+        margin-left: 16.5rem;
+    }
+}
+
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 30px;
+}
+
+.footer-text-container {
+    padding: 10px;
+}
