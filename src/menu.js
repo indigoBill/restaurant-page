@@ -1,8 +1,10 @@
-import { createContentContainer } from './general-layout.js';
+import { createContentContainer, adjustTabStyle } from './general-layout.js';
+import './style-sheets/menu.css';
 export { createMenuPageContent };
 
 function createMenuPageContent(){
     createContentContainer('menu');
+    adjustTabStyle('menu');
 
     createMealHeader('breakfast'); 
 
@@ -37,7 +39,7 @@ function createMenuPageContent(){
     const dinnerMeal_1 = createFoodSquare();
     dinnerMeal_1.addImage('../src/assets/gabre-cameron-9jKfpXYPyVo-unsplash.jpg');
     dinnerMeal_1.addText('Red Peas Soup', true);
-    dinnerMeal_1.addText('This is a signature meal for chilly days.\n Made with red kidney beans and vegetables cooked in a flavorful coconut milk broth this meal packs a nutritious punch that won\'t be forgotten');
+    dinnerMeal_1.addText('This is a signature meal for chilly days. Made with red kidney beans and vegetables cooked in a flavorful coconut milk broth this meal packs a nutritious punch that won\'t be forgotten');
     dinnerMeal_1.addText('$12', false, true);
 
     const dinnerMeal_2 = createFoodSquare('right');
