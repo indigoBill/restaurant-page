@@ -5,7 +5,7 @@ import { createContactPageContent } from './contact.js';
 
 createGeneralLayout();
 
-function changeMainContent(){
+const changeMainContent = (function(){
     const tabs = document.querySelectorAll('.tab');
 
     tabs.forEach((tab) => tab.addEventListener('click', displayPageContent));
@@ -47,7 +47,4 @@ function changeMainContent(){
         }
         
     }
-}
-
-changeMainContent();
-
+})();
