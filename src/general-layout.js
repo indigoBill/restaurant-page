@@ -1,5 +1,6 @@
 import { createHomePageContent } from './home.js';
-export { createGeneralLayout, changeCurrentTab, createContentContainer };
+import './style-sheets/style.css';
+export { createGeneralLayout, changeCurrentTab, createContentContainer, adjustTabStyle };
 
 function createGeneralLayout(){
     const page = document.querySelector('#content');
@@ -16,7 +17,7 @@ function createGeneralLayout(){
         headerSubtext.classList.add('header-subtext');
 
         headerTitle.textContent = 'ISLAND FLAVOR';
-        headerSubtext.textContent = '-AUTHENTIC CARIBBEAN CUISINE-';
+        headerSubtext.textContent = '-AUTHENTIC JAMAICAN CUISINE-';
 
         headerTextContainer.appendChild(headerTitle);
         headerTextContainer.appendChild(headerSubtext);
@@ -65,10 +66,24 @@ function createGeneralLayout(){
         page.appendChild(mainSection);
     }
 
+    function createFooter(){
+        const footerSection = document.createElement('footer');
+        const footerTextContainer = document.createElement('div');
+
+        footerTextContainer.classList.add('footer-text-container');
+
+        footerTextContainer.textContent = 'ISLAND FLAVOR -BROOKLYN, NY-';
+
+        footerSection.appendChild(footerTextContainer);
+        
+        page.appendChild(footerSection);
+    }
+
     createHeader();
     createPageTabs();
     createMainSection();
     createHomePageContent();
+    createFooter();
 }
 
 function moveTabSlider(){
@@ -103,6 +118,27 @@ function changeCurrentTab(currentTab){
     });
 }
 
+function adjustTabStyle(pageType){
+    const tabSection = document.querySelector('.tab-section');
+    const tabs = document.querySelectorAll('.tab');
+
+    if(pageType.toUpperCase() === 'HOME' || pageType.toUpperCase() === 'CONTACT'){
+        tabSection.style.backgroundColor = 'black';
+
+        tabs.forEach((tab) => {
+            tab.style.color = 'white';
+        });
+
+    }else{
+        tabSection.style.backgroundColor = 'white';
+
+        tabs.forEach((tab) => {
+            tab.style.color = 'rgb(66, 66, 66)';
+        });
+        
+    }
+}
+
 function createContentContainer(pageType){
     const mainSection = document.querySelector('.main-section');
 
@@ -113,4 +149,3 @@ function createContentContainer(pageType){
 
     mainSection.replaceChildren(content);
 }
-
