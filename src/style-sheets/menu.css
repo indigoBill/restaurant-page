@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-bottom: 70px;
 }
 
 .image-container {
@@ -110,5 +111,14 @@
 
     .text-container {
         margin: 40px 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .border-square,
+    .left-image-square,
+    .right-image-square {
+        height: 200px;
+        width: 200px;
     }
 }
